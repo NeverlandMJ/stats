@@ -5,7 +5,7 @@ import (
 	"log"
 	"testing"
 
-	
+	"github.com/NeverlandMJ/bank/pkg/types"
 )
 
 func ExampleTotalInCategory() {
