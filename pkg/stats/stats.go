@@ -6,13 +6,14 @@ import "github.com/NeverlandMJ/bank/v2/pkg/types"
 func Avg(payments []types.Payment) types.Money {
 
 	total := types.Money(0)
-   
+	soni := 0
 	for _, amounts := range payments {
 		if amounts.Status != types.StatusFail{
 		total = total + amounts.Amount
+		soni++
 		}
 	}
-	average := types.Money(total) / types.Money(len(payments))
+	average := types.Money(total) / types.Money(soni)
 
 	return types.Money(average)
 
