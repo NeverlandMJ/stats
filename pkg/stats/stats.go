@@ -1,6 +1,6 @@
 package stats
 
-import "github.com/NeverlandMJ/bank/pkg/bank/types"
+import "github.com/NeverlandMJ/bank/v2/pkg/types"
 
 
 func Avg(payments []types.Payment) types.Money {

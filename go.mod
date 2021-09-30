@@ -2,6 +2,6 @@ module github.com/NeverlandMJ/stats/v2
 
 go 1.17
 
-require github.com/NeverlandMJ/bank v0.0.0-20210928173415-77a4026cf894
+require github.com/NeverlandMJ/bank v1.0.0
 
-require github.com/NeverlandMJ/bank/v2 v2.0.0 // indirect
+require github.com/NeverlandMJ/bank/v2 v2.0.0 
