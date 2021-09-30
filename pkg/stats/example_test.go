@@ -2,7 +2,10 @@ package stats
 
 import (
 	"fmt"
-	"github.com/NeverlandMJ/bank/pkg/bank/types"
+	"log"
+	"testing"
+
+	
 )
 
 func ExampleTotalInCategory() {
@@ -24,4 +27,12 @@ func ExampleTotalInCategory() {
 	fmt.Println(total)
 
 	//Output: 3000000
+}
+
+
+func Test(t *testing.T) {
+	category := types.Category{}
+	log.Println("category => ", category)
+	log.Println("category => ", types.Category)
+	log.Println("category => ", types.Category)
 }

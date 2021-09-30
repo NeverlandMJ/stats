@@ -1,4 +1,4 @@
-module github.com/NeverlandMJ/stats
+module github.com/NeverlandMJ/stats/v2
 
 go 1.17
 
