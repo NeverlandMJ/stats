@@ -6,6 +6,26 @@ import (
 	
 )
 
+func ExampleAvg(){
+	payment := []types.Payment{
+		{
+			Amount: 10_000_00,
+		},
+		{
+			Amount: 20_000_00,
+		},
+		{
+			Amount: 30_000_00,
+		},
+
+	}
+	averageAmount := Avg(payment)
+	fmt.Println(averageAmount)
+
+	// Output: 2000000
+
+}
+
 func ExampleTotalInCategory() {
 	cards := []types.Payment{
 		{
