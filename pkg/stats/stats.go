@@ -32,49 +32,49 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 	return total
 }
 
-func FilterByCategory(payments []types.Payment, category types.Category) []types.Payment{
-	var filtered []types.Payment
-	for _, payment := range payments{
-		if payment.Category == category{
-			filtered = append(filtered, payment)
-		}
-	}
-	return filtered
-}
-
-// func FilterByCategory2(payments []types.Payment, category types.Category) types.Money{
-// 	occurance := types.Money(0) 
-	
+// func FilterByCategory(payments []types.Payment, category types.Category) []types.Payment{
+// 	var filtered []types.Payment
 // 	for _, payment := range payments{
 // 		if payment.Category == category{
-// 			occurance++
+// 			filtered = append(filtered, payment)
 // 		}
 // 	}
-// 	return occurance
+// 	return filtered
 // }
 
-// func TotalInCategory2(payments []types.Payment, category types.Category) types.Money {
-// 	total := types.Money(0)
-// 	for _, amounts := range payments {
-		
-// 		if amounts.Category == category {
-// 			total = total + amounts.Amount
-// 		}
-// 	}
+func FilterByCategory2(payments []types.Payment, category types.Category) types.Money{
+	occurance := types.Money(0) 
 	
-// 	return total
-// }
+	for _, payment := range payments{
+		if payment.Category == category{
+			occurance++
+		}
+	}
+	return occurance
+}
 
-// func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money{
-// 	categories := map[types.Category]types.Money{}
-
-// 	for _, payment := range payments{
+func TotalInCategory2(payments []types.Payment, category types.Category) types.Money {
+	total := types.Money(0)
+	for _, amounts := range payments {
 		
-// 		categories[payment.Category] = TotalInCategory(payments, payment.Category)/FilterByCategory2(payments, payment.Category)
-// 	}
+		if amounts.Category == category {
+			total = total + amounts.Amount
+		}
+	}
+	
+	return total
+}
+
+func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money{
+	categories := map[types.Category]types.Money{}
+
+	for _, payment := range payments{
+		
+		categories[payment.Category] = TotalInCategory(payments, payment.Category)/FilterByCategory2(payments, payment.Category)
+	}
 
 		
-// 	return categories
-// }
+	return categories
+}
 
 
