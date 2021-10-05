@@ -42,6 +42,7 @@ func FilterByCategory(payments []types.Payment, category types.Category) []types
 	return filtered
 }
 
+
 func FilterByCategory2(payments []types.Payment, category types.Category) types.Money{
 	occurance := types.Money(0) 
 	
@@ -77,4 +78,14 @@ func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money{
 	return categories
 }
 
+
+
+func CategoriesTotal(payments []types.Payment)map[types.Category]types.Money{
+	categories := map[types.Category]types.Money{}
+
+	for _, payment := range payments{
+		categories[payment.Category] += payment.Amount
+	}
+	return categories
+}
 
