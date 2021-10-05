@@ -41,11 +41,40 @@ func FilterByCategory(payments []types.Payment, category types.Category) []types
 	}
 	return filtered
 }
-func CategoriesTotal(payments []types.Payment)map[types.Category]types.Money{
-	categories := map[types.Category]types.Money{}
 
-	for _, payment := range payments{
-		categories[payment.Category] += payment.Amount
-	}
-	return categories
-}
+// func FilterByCategory2(payments []types.Payment, category types.Category) types.Money{
+// 	occurance := types.Money(0) 
+	
+// 	for _, payment := range payments{
+// 		if payment.Category == category{
+// 			occurance++
+// 		}
+// 	}
+// 	return occurance
+// }
+
+// func TotalInCategory2(payments []types.Payment, category types.Category) types.Money {
+// 	total := types.Money(0)
+// 	for _, amounts := range payments {
+		
+// 		if amounts.Category == category {
+// 			total = total + amounts.Amount
+// 		}
+// 	}
+	
+// 	return total
+// }
+
+// func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money{
+// 	categories := map[types.Category]types.Money{}
+
+// 	for _, payment := range payments{
+		
+// 		categories[payment.Category] = TotalInCategory(payments, payment.Category)/FilterByCategory2(payments, payment.Category)
+// 	}
+
+		
+// 	return categories
+// }
+
+
