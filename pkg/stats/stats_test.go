@@ -109,3 +109,103 @@ func TestCategoriesAvg(t *testing.T) {
 		t.Errorf("invalid result, expected: %v, actual: %v", expected, result)
 	}
 }
+
+func TestPeriodsDynamic1(t *testing.T) {
+	firstPeriod := map[types.Category]types.Money{
+		"auto": 10,
+		"food": 20,
+	}
+
+	secondPeriod := map[types.Category]types.Money{
+		"auto": 5,
+		"food": 3,
+		
+	}
+
+	expected := map[types.Category]types.Money{
+		"auto": -5,
+		"food": -17,
+		
+	}
+
+	result := PeriodsDynamic(firstPeriod, secondPeriod)
+
+	if !reflect.DeepEqual(expected, result){
+		t.Errorf("invalid result, expected: %v, actual: %v", expected, result)
+	}
+
+}
+
+func TestPeriodsDynamic2(t *testing.T) {
+	firstPeriod := map[types.Category]types.Money{
+		"auto": 10,
+		"food": 20,
+	}
+
+	secondPeriod := map[types.Category]types.Money{
+		"auto": 20,
+		"food": 20,
+	}
+
+	expected := map[types.Category]types.Money{
+		"auto": 10,
+		"food": 0,
+	}
+
+	result := PeriodsDynamic(firstPeriod, secondPeriod)
+
+	if !reflect.DeepEqual(expected, result){
+		t.Errorf("invalid result, expected: %v, actual: %v", expected, result)
+	}
+
+}
+
+func TestPeriodsDynamic3(t *testing.T) {
+	firstPeriod := map[types.Category]types.Money{
+		"auto": 10,
+		"food": 20,
+	}
+
+	secondPeriod := map[types.Category]types.Money{
+		"food": 20,
+		
+	}
+
+	expected := map[types.Category]types.Money{
+		"auto": -10,
+		"food": 0,
+		
+	}
+
+	result := PeriodsDynamic(firstPeriod, secondPeriod)
+
+	if !reflect.DeepEqual(expected, result){
+		t.Errorf("invalid result, expected: %v, actual: %v", expected, result)
+	}
+
+}
+func TestPeriodsDynamic4(t *testing.T) {
+	firstPeriod := map[types.Category]types.Money{
+		"auto": 10,
+		"food": 20,
+	}
+
+	secondPeriod := map[types.Category]types.Money{
+		"auto": 10,
+		"food": 25,
+		"mobile": 5,
+	}
+
+	expected := map[types.Category]types.Money{
+		"auto": 0,
+		"food": 5,
+		"mobile": 5,
+	}
+
+	result := PeriodsDynamic(firstPeriod, secondPeriod)
+
+	if !reflect.DeepEqual(expected, result){
+		t.Errorf("invalid result, expected: %v, actual: %v", expected, result)
+	}
+
+}
