@@ -21,6 +21,7 @@ func Avg(payments []types.Payment) types.Money {
 
 func TotalInCategory(payments []types.Payment, category types.Category) types.Money {
 	total := types.Money(0)
+	
 	for _, amounts := range payments {
 		
 		if amounts.Status != types.StatusFail && amounts.Category == category {
